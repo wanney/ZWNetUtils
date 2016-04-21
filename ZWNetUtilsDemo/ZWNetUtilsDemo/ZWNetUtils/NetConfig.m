@@ -7,7 +7,7 @@
 //
 
 #import "ZWNetUtils.h"
-
+#import "MBProgressHUD+MJ.h"
 @implementation NetConfig
 + (void)requestWith:(NSString *)Urlstring
       andParameters:(id)parameters

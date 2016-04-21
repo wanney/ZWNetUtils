@@ -64,6 +64,10 @@
  */
 + (void)clearExtraLine :(UITableView *)tableView;
 /**
+ *  验证邮箱是否有效
+ */
++ (BOOL)isValidateEmail :(NSString *)email;
+/**
  *  把任何对象都转化成字符串，主要用于nsnumber型的转化
  */
 + (NSString *)toString:(id)anyObject;

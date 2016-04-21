@@ -7,6 +7,7 @@
 //
 
 #import "ZWNetUtils.h"
+#import "FYPhotoBrowser.h"
 #define kBackSizeTime 0.4
 
 @implementation FYPhotoBrowser

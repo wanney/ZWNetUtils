@@ -9,7 +9,7 @@
  */
 
 #import "ZWNetUtils.h"
-
+#import "DJPageView.h"
 #define   WIN_WIDTH  [[UIScreen mainScreen] bounds].size.width
 #define   WIN_HEIGHT [[UIScreen mainScreen] bounds].size.heigh
 

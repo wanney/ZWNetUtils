@@ -33,20 +33,4 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-/**
- *  Custom views and tools from net by collect
- */
-#import "Tools/DJPageView/DJPageView.h"                        // 广告轮播图控件
-#import "Tools/DLRadioButton/DLRadioButton.h"                  // 单选按钮
-#import "Tools/DXAlertView/DXAlertView.h"                      // 底部弹出的列表菜单
-#import "Tools/EAIntroView/EAIntroView.h"                      // 欢迎界面
-#import "Tools/FYPhotoBrowser/FYPhotoBrowser.h"                // 快速浏览图片控件
-#import "Tools/HMSegmentedControl/HMSegmentedControl.h"        // 顶部tab   - view !
-#import "Tools/HXTagsView/HXTagsView.h"                        // 个性化标签
-#import "Tools/JYRadarChart/JYRadarChart.h"                    // 雷达图
-#import "Tools/MBProgressHUD+MJ/MBProgressHUD+MJ.h"            // 基于MBProgressHUD个性化显示的封装
-#import "Tools/Networking/Networking.h"                        // 基于AFNetworking的封装
-#import "Tools/UAProgressView/UAProgressView.h"                // 进度条
-#import "Tools/VPImageCropper/VPImageCropperViewController.h"  // 可裁剪图片的图片选择器，适用：需要正方形图片的头像选择
-#import "Tools/ZLPhotoActionSheet/ZLPhotoActionSheet.h"        // 多功能的图片选择器
 #endif

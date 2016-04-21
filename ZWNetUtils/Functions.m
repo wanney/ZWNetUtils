@@ -152,6 +152,13 @@
     [tableView setTableFooterView:view];
 }
 
+
+//测试注册的邮箱是否符合要求
++ (BOOL)isValidateEmail :(NSString *)email
+{
+    return NO;
+}
+
 + (NSString *)toString:(id)anyObject{
     return [NSString stringWithFormat:@"%@",anyObject];
 }
