@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
   s.name             = "ZWNetUtils"  
-  s.version          = "1.0.4"  
+  s.version          = "1.0.5"  
   s.summary          = "A Common Net Utils used on iOS."  
   s.description      = <<-DESCRIPTION  
                        It is a common net utils used on iOS, which implement by Objective-C.
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   
   s.platform     = :ios, '8.0'  
   s.requires_arc = true  
-  s.source_files = 'ZWNetUtils/**/*.{h,m}'  
+  s.source_files = 'ZWNetUtilsDemo/ZWNetUtilsDemo/ZWNetUtils/**/*.{h,m}'  
 
   s.frameworks = 'Foundation', 'CoreLocation', 'UIKit'
   
