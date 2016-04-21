@@ -36,7 +36,6 @@
 /**
  *  Custom views and tools from net by collect
  */
-#import "Tools/BasePicker/BasePickerView.h"                    // 代替输入框显示的选择器
 #import "Tools/DJPageView/DJPageView.h"                        // 广告轮播图控件
 #import "Tools/DLRadioButton/DLRadioButton.h"                  // 单选按钮
 #import "Tools/DXAlertView/DXAlertView.h"                      // 底部弹出的列表菜单
