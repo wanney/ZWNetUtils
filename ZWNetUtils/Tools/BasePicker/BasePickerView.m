@@ -1,9 +1,9 @@
 //
-//  BasePickerView.m
-//  MilesTouch
+//  BasePickerView.h
+//  ZWNetUtils
 //
-//  Created by 晏语科技 on 15/8/14.
-//  Copyright (c) 2015年 ybywl. All rights reserved.
+//  Created by wanney on 15/8/14.
+//  Copyright (c) 2015年 testWanney. All rights reserved.
 //
 
 #import "BasePickerView.h"
