@@ -181,10 +181,10 @@
     return mString;
 }
 
-+ (NSString *)autoAddBaseUrlPrefix:(NSString *)urlString{
++ (NSString *)autoAddBaseUrl:(NSString *)baseUrl withUrl:(NSString *)urlString{
     if (![Functions isEmptyWithString:urlString]){
-        if ([urlString rangeOfString:BASEURL].location == NSNotFound) {
-            urlString = [BASEURL stringByAppendingString:urlString];
+        if ([urlString rangeOfString:baseUrl].location == NSNotFound) {
+            urlString = [baseUrl stringByAppendingString:urlString];
         }
         return urlString;
     }else{
@@ -192,10 +192,10 @@
     }
 }
 
-+ (NSString *)autoAddImageBaseUrlPrefix:(NSString *)urlString{
++ (NSString *)autoAddImageBaseUrl:(NSString *)imageBaseUrl withUrl:(NSString *)urlString{
     if (![Functions isEmptyWithString:urlString]){
-        if ([urlString rangeOfString:ImageBaseUrl].location == NSNotFound) {
-            urlString = [ImageBaseUrl stringByAppendingString:urlString];
+        if ([urlString rangeOfString:imageBaseUrl].location == NSNotFound) {
+            urlString = [imageBaseUrl stringByAppendingString:urlString];
         }
         return urlString;
     }else{
@@ -237,9 +237,9 @@
     return str;
 }
 
-+ (void) changeTheNaviBarColor:(UIViewController *)vc{
++ (void)changeTheNaviBarColor:(UIViewController *)vc WithSystemColor:(UIColor *)color{
     //修改背景色
-    vc.navigationController.navigationBar.barTintColor = SystemColor;
+    vc.navigationController.navigationBar.barTintColor = color;
     //修改标题色
     [vc.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
     //修改按钮颜色

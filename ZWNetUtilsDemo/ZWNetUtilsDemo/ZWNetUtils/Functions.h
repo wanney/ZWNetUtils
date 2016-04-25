@@ -80,11 +80,11 @@
  */
 + (NSString *)clearExtraEntrtKey:(NSString *)string;
 
-+ (NSString *)autoAddBaseUrlPrefix:(NSString *)urlString;
++ (NSString *)autoAddBaseUrl:(NSString *)baseUrl withUrl:(NSString *)urlString;
 /**
  *  判断图片路径，如果没有根路径，便加上
  */
-+ (NSString *)autoAddImageBaseUrlPrefix:(NSString *)urlString;
++ (NSString *)autoAddImageBaseUrl:(NSString *)imageBaseUrl withUrl:(NSString *)urlString;
 
 + (BOOL)resignedKeyBoard:(UITextField *)textField;
 
@@ -114,7 +114,7 @@
  *
  *  @param vc 对应的界面
  */
-+ (void)changeTheNaviBarColor:(UIViewController *)vc;
++ (void)changeTheNaviBarColor:(UIViewController *)vc WithSystemColor:(UIColor *)color;
 
 + (void)setRoundImageView:(UIImageView *)imageView;
 

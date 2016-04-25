@@ -35,7 +35,7 @@
 #define Longitude    @"longitude"
 
 
-#define SystemColor     [UIColor colorWithRed:49/255.0 green:145/255.0 blue: 224/255.0 alpha:1]
+
 #define LightGreenColor [UIColor colorWithRed:161/255.0 green:202/255.0 blue:207/255.0 alpha:1]
 #define LightGrayColor  [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1]
 #define ZWidth          [UIScreen mainScreen].bounds.size.width
@@ -43,15 +43,8 @@
 
 #define ORIGINAL_MAX_WIDTH 640.0f
 
-#define DownloadRootPath [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/DownLoad/TemplateDemo"]
-#define KindPlistPath    [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Kinds.plist"]
-
-#define ImageBaseUrl    @""
-#define BASEURL         @""
-
 #define CaptchaCodeTime 60
 #define DelayReloadTime 1.0
-
 
 #define XCODE_COLORS_ESCAPE @"\033["
 
