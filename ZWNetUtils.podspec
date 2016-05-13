@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
   s.name             = "ZWNetUtils"  
-  s.version          = "1.0.6"  
+  s.version          = "1.0.7"  
   s.summary          = "A Common Net Utils used on iOS."  
   s.description      = <<-DESCRIPTION  
                        It is a common net utils used on iOS, which implement by Objective-C.
@@ -22,5 +22,5 @@ Pod::Spec.new do |s|
   s.dependency 'MBProgressHUD', '~> 0.9.2'
   s.dependency 'MJRefresh', '~> 3.1.0'
   s.dependency 'SDWebImage', '~> 3.7.5'   
-
+  s.dependency 'ZLPhotoBrowser', '~> 1.0.5'
 end

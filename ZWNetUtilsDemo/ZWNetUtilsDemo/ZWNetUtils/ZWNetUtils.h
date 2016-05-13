@@ -25,6 +25,7 @@
 #import "MJRefresh.h"
 #import "SDWebImageManager.h"
 #import "UIImageView+WebCache.h"
+#import "ZLPhotoActionSheet.h"                // 多功能的图片选择器
 
 /**
  *  FrameWork from system
@@ -49,5 +50,5 @@
 #import "Networking.h"                        // 基于AFNetworking的封装
 #import "UAProgressView.h"                    // 进度条
 #import "VPImageCropperViewController.h"      // 可裁剪图片的图片选择器，适用：需要正方形图片的头像选择
-#import "ZLPhotoActionSheet.h"                // 多功能的图片选择器
+
 #endif

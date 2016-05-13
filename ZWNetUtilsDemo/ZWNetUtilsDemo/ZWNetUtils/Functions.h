@@ -188,7 +188,55 @@
  *  @return 坐标点
  */
 + (CLLocationCoordinate2D) getTheAddressLngWith:(NSString *)str;//格式为：经度，纬度
+/**
+ *  设置BarButtonItem按钮的特殊字体
+ *
+ *  @param barBtnItem BarButtonItem
+ *  @param size       字体大小
+ *  @param font       字体
+ */
++ (void) setTextFontWith:(NSString *)font
+           andBarBtnItem:(UIBarButtonItem *)barBtnItem
+                 andSize:(CGFloat)size;
+/**
+ *  设置按钮的特殊字体
+ *
+ *  @param button   按钮
+ *  @param str      字符串
+ *  @param size     字体大小
+ *  @param range    eg. NSMakeRange(6, 1)//从第6个字开始，长度为1
+ *  @param color    颜色
+ *  @param tinColor tin颜色
+ *  @param font     字体大小
+ */
++ (void) setButtonIcon:(UIButton *)button
+            withString:(NSString *)str
+               andSize:(CGFloat)size
+              andRange:(NSRange)range
+              andColor:(UIColor *)color
+           andTinColor:(UIColor *)tinColor
+               andFont:(NSString *)font;
 
+/**
+ *  同一个label 给内容设置不同的颜色和字体
+ *
+ *  @param label
+ *  @param font    eg. [UIFont systemFontOfSize:15]
+ *  @param range   eg. NSMakeRange(6, 1)//从第6个字开始，长度为1
+ *  @param vaColor eg. UIColor
+ */
++ (void) fuwenbenLabel:(UILabel *)label
+            FontNumber:(id)font
+              AndRange:(NSRange)range
+              AndColor:(UIColor *)vaColor;
+/**
+ *  将html格式的文本转化为具有格式正常的文本
+ *
+ *  @param htmlStr
+ *
+ *  @return
+ */
++ (NSString *) getStrFromHtmlContent:(NSString *)htmlStr;
 #pragma mark - AppDelegate的设置
 /**
  *  初始化keyboard

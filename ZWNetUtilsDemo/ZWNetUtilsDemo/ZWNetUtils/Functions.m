@@ -426,6 +426,53 @@
     return point;
 }
 
++ (void) setTextFontWith:(NSString *)font andBarBtnItem:(UIBarButtonItem *)barBtnItem andSize:(CGFloat)size{
+    NSDictionary *fontDic=@{
+                            NSForegroundColorAttributeName:[UIColor whiteColor],
+                            NSFontAttributeName:[UIFont fontWithName:font size:size],  //粗体
+                            };
+    [barBtnItem setTitleTextAttributes:fontDic
+                              forState:UIControlStateNormal];
+    [barBtnItem setTitleTextAttributes:fontDic
+                              forState:UIControlStateHighlighted];
+}
+
++ (void) setButtonIcon:(UIButton *)button  withString:(NSString *)str andSize:(CGFloat)size andRange:(NSRange)range andColor:(UIColor *)color andTinColor:(UIColor *)tinColor andFont:(NSString *)font{
+    NSDictionary *fontWhiteDic=@{
+                                 NSForegroundColorAttributeName:color,
+                                 NSFontAttributeName:[UIFont fontWithName:font size:size],  //粗体
+                                 };
+    NSDictionary *fontRedDic=@{
+                               NSForegroundColorAttributeName:tinColor,
+                               NSFontAttributeName:[UIFont fontWithName:font size:size],  //粗体
+                               };
+    NSMutableAttributedString *attriLikeNormalString = [[NSMutableAttributedString alloc] initWithString:str];
+    [attriLikeNormalString addAttributes:fontWhiteDic
+                                   range:range];
+    NSMutableAttributedString *attriLikeSelectedString = [[NSMutableAttributedString alloc] initWithString:str];
+    [attriLikeSelectedString addAttributes:fontRedDic
+                                     range:range];
+    [button setAttributedTitle:attriLikeNormalString forState:UIControlStateNormal];
+    [button setAttributedTitle:attriLikeSelectedString forState:UIControlStateHighlighted];
+}
+
++ (void)fuwenbenLabel:(UILabel *)label FontNumber:(id)font AndRange:(NSRange)range AndColor:(UIColor *)vaColor
+{
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:label.text];
+    //设置字号
+    [str addAttribute:NSFontAttributeName value:font range:range];
+    //设置文字颜色
+    [str addAttribute:NSForegroundColorAttributeName value:vaColor range:range];
+    label.attributedText = str;
+}
+
++ (NSString *) getStrFromHtmlContent:(NSString *)htmlStr{
+    NSMutableAttributedString * attrStr = [[NSMutableAttributedString alloc] initWithData:[htmlStr dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+    UITextView * myTextView =  [[UITextView alloc]init];
+    [myTextView setAttributedText:attrStr];
+    return myTextView.text;
+}
+
 + (void) initIQKeyBoard{
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
     manager.enable = YES; //控制整个功能是否启用。
