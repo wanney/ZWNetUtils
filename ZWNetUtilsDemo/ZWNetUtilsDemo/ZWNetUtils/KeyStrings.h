@@ -34,10 +34,19 @@
 #define Latitude     @"latitude"
 #define Longitude    @"longitude"
 
+#define LightGreenColor [UIColor colorWithRed:161/255.0 green:202/255.0 blue:207/255.0    alpha:1]
+#define LightGrayColor  [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0    alpha:1]
 
+#define GrayADColor [UIColor colorWithRed:173/255.0f green:173/255.0f blue:173/255.0f     alpha:1.0f]
+#define Gray4DColor [UIColor colorWithRed:77/255.0f green:77/255.0f blue:77/255.0f        alpha:1.0f]
+#define Gray6DColor [UIColor colorWithRed:103/255.0f green:103/255.0f blue:103/255.0f     alpha:1.0f]
+#define Gray2DColor [UIColor colorWithRed:45/255.0f green:45/255.0f blue:45/255.0f        alpha:1.0f]
+#define Gray8DColor [UIColor colorWithRed:141/255.0f green:141/255.0f blue:141/255.0f     alpha:1.0f]
+#define GreenOptionColor [UIColor colorWithRed:51/255.0f green:201/255.0f blue:137/255.0f alpha:1.0f]
 
-#define LightGreenColor [UIColor colorWithRed:161/255.0 green:202/255.0 blue:207/255.0 alpha:1]
-#define LightGrayColor  [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1]
+#define GrayLineColor [UIColor colorWithRed:237/255.0f green:237/255.0f blue:237/255.0f    alpha:1.0f]
+#define GraybgColor [UIColor colorWithRed:245/255.0f green:245/255.0f blue:245/255.0f    alpha:1.0f]
+
 #define ZWidth          [UIScreen mainScreen].bounds.size.width
 #define ZHeight         [UIScreen mainScreen].bounds.size.height
 
@@ -46,12 +55,15 @@
 #define CaptchaCodeTime 60
 #define DelayReloadTime 1.0
 
+#define OnePixelHeight   1.f/[UIScreen mainScreen].scale
+
 #define XCODE_COLORS_ESCAPE @"\033["
 
 #define XCODE_COLORS_RESET_FG  XCODE_COLORS_ESCAPE @"fg;" // Clear any foreground color
 #define XCODE_COLORS_RESET_BG  XCODE_COLORS_ESCAPE @"bg;" // Clear any background color
 #define XCODE_COLORS_RESET     XCODE_COLORS_ESCAPE @";"   // Clear any foreground or background color
 
+#define ALog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 #define LogBlue(frmt, ...)    NSLog((XCODE_COLORS_ESCAPE @"fg0,0,255;" frmt XCODE_COLORS_RESET), ##__VA_ARGS__)
 #define LogRed(frmt, ...)     NSLog((XCODE_COLORS_ESCAPE @"fg255,0,0;" frmt XCODE_COLORS_RESET), ##__VA_ARGS__)
 #define LogGreen(frmt, ...)   NSLog((XCODE_COLORS_ESCAPE @"fg0,255,0;" frmt XCODE_COLORS_RESET), ##__VA_ARGS__)

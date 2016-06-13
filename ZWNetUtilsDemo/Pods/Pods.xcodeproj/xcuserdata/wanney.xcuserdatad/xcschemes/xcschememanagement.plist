@@ -34,8 +34,59 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>WYPopoverController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ZLPhotoBrowser.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>410B25DF16EA5C5B3E2698F74F9625FB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>48A0357E1D71FC45A05A8D7671C9D0D4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>89ED10AF5669A6A93AD4EBDC1240EB3B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8F74D9EA91F4C43190670066BAC37D44</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A43F1889BD7E05585B502D0F09C816F1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C743C42395D3C33F9883CB4690B475A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2AEE01846E803DAB98BF36D8D78628E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE2F1D7B9D9FCEA148517E4657B243F4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

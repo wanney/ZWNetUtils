@@ -20,25 +20,34 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - IQKeyboardManager (4.0.2)
+  - IQKeyboardManager (4.0.3)
+  - JPush (2.1.7)
   - MBProgressHUD (0.9.2)
-  - MJRefresh (3.1.0)
+  - MJRefresh (3.1.1)
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
+  - WYPopoverController (0.2.2)
+  - ZLPhotoBrowser (1.0.7)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - IQKeyboardManager (~> 4.0.0)
+  - JPush (~> 2.1.6)
   - MBProgressHUD (~> 0.9.2)
   - MJRefresh (~> 3.1.0)
   - SDWebImage (~> 3.7.5)
+  - WYPopoverController (~> 0.2.2)
+  - ZLPhotoBrowser (~> 1.0.5)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  IQKeyboardManager: 2341089c4ae25fa2fa82ce356a259fcd267dc6b6
+  IQKeyboardManager: be9695ffc5a52077deb4847608f338771022d6d1
+  JPush: d37320eba856bf91f2c73989df4abf1e8846db2c
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
-  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  MJRefresh: 70a47c5543b567cdaf70ead5a6e99ce820652eb9
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  WYPopoverController: 00d879c25bddd1fd873dcc21aa98c8308d7f1555
+  ZLPhotoBrowser: f0c01ea435582fb33fca56feccac40bdcdeb799e
 
 COCOAPODS: 0.39.0

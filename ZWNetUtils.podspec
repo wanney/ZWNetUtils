@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
   s.name             = "ZWNetUtils"  
-  s.version          = "1.0.7"  
+  s.version          = "1.0.8"  
   s.summary          = "A Common Net Utils used on iOS."  
   s.description      = <<-DESCRIPTION  
                        It is a common net utils used on iOS, which implement by Objective-C.
@@ -14,13 +14,20 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '8.0'  
   s.requires_arc = true  
   s.source_files = 'ZWNetUtilsDemo/ZWNetUtilsDemo/ZWNetUtils/**/*.{h,m}'  
+  s.resources    = ['ZWNetUtilsDemo/ZWNetUtilsDemo/ZWNetUtils/**/*.{xib,storyboard}']
 
-  s.frameworks = 'Foundation', 'CoreLocation', 'UIKit'
+  s.frameworks   = 'Foundation', 'CoreLocation', 'UIKit'
   
   s.dependency 'IQKeyboardManager', '~> 4.0.0'
   s.dependency 'AFNetworking', '~> 2.0'
   s.dependency 'MBProgressHUD', '~> 0.9.2'
   s.dependency 'MJRefresh', '~> 3.1.0'
-  s.dependency 'SDWebImage', '~> 3.7.5'   
+  s.dependency 'SDWebImage', '~> 3.7.5'
+  s.dependency 'JZNavigationExtension', '~> 1.4.7'   
+ 
   s.dependency 'ZLPhotoBrowser', '~> 1.0.5'
+#极光推送
+  s.dependency 'JPush', '~> 2.1.6'
+#弹出视图
+  s.dependency 'WYPopoverController', '~> 0.2.2'
 end
