@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
   s.name             = "ZWNetUtils"  
-  s.version          = "1.0.9"  
+  s.version          = "1.0.92"  
   s.summary          = "A Common Net Utils used on iOS."  
   s.description      = <<-DESCRIPTION  
                        It is a common net utils used on iOS, which implement by Objective-C.
