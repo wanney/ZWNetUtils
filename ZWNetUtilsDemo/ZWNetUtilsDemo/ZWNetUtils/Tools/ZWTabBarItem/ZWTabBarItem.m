@@ -6,7 +6,6 @@
 //  Copyright © 2016年 yykj. All rights reserved.
 //
 
-#import "ZWTabBarItem.h"
 #import "ZWNetUtils.h"
 @implementation ZWTabBarItem
 - (nullable instancetype)initWithCoder:(NSCoder *)aDecoder{

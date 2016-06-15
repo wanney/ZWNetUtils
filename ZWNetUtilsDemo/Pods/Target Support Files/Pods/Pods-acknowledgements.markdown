@@ -52,10 +52,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-## JPush
-
-Copyright jpush.cn
-
 ## MBProgressHUD
 
 Copyright (c) 2009-2015 Matej Bukovinski

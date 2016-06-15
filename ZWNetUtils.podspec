@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
   s.name             = "ZWNetUtils"  
-  s.version          = "1.0.8"  
+  s.version          = "1.0.9"  
   s.summary          = "A Common Net Utils used on iOS."  
   s.description      = <<-DESCRIPTION  
                        It is a common net utils used on iOS, which implement by Objective-C.
@@ -26,8 +26,6 @@ Pod::Spec.new do |s|
   s.dependency 'JZNavigationExtension', '~> 1.4.7'   
  
   s.dependency 'ZLPhotoBrowser', '~> 1.0.5'
-#极光推送
-  s.dependency 'JPush', '~> 2.1.6'
 #弹出视图
   s.dependency 'WYPopoverController', '~> 0.2.2'
 end

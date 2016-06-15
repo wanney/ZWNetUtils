@@ -250,10 +250,5 @@
  *  开启网络指示器
  */
 + (void)checkNetWorkingState;
-/**
- *  极光推送集成
- *  新版2.1.6
- *  @param launchOptions
- */
-+ (void) jPushAddAndOptions:(NSDictionary *)launchOptions andHandleNoteDict:(void (^)( id dataDic)) handleNoteDict;
+
 @end

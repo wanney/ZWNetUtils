@@ -25,6 +25,7 @@
 #define RegisterSuccessBack      @"注册成功，正在登录..."
 #define TheApiWillOpenNote       @"功能即将开放，敬请期待..."
 
+#define JPushAppKey    @"035ff06197ec95249bf9a562"
 
 //其他类
 #define UserId       @"userid"
@@ -33,6 +34,8 @@
 #define Token        @"token"
 #define Latitude     @"latitude"
 #define Longitude    @"longitude"
+
+#define DidChangeTheIndustrySuccessMessage @"didChangeTheIndustrySuccessMessage"
 
 #define LightGreenColor [UIColor colorWithRed:161/255.0 green:202/255.0 blue:207/255.0    alpha:1]
 #define LightGrayColor  [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0    alpha:1]

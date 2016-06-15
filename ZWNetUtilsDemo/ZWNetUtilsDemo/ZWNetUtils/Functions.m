@@ -521,42 +521,4 @@
     // 开始监听
     [manager.reachabilityManager startMonitoring];
 }
-
-+ (void) jPushAddAndOptions:(NSDictionary *)launchOptions
-          andHandleNoteDict:(void (^)( NSDictionary * dataDic)) handleNoteDict{
-    //Required
-    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
-        //可以添加自定义categories
-        [JPUSHService registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge |
-                                                          UIUserNotificationTypeSound |
-                                                          UIUserNotificationTypeAlert)
-                                              categories:nil];
-    } else {
-        //categories 必须为nil
-        [JPUSHService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
-                                                          UIRemoteNotificationTypeSound |
-                                                          UIRemoteNotificationTypeAlert)
-                                              categories:nil];
-    }
-    //Required
-    //如需兼容旧版本的方式，请依旧使用[JPUSHService setupWithOption:launchOptions]方式初始化和同时使用pushConfig.plist文件声明appKey等配置内容。
-    //参数参考pushConfig
-    [JPUSHService setupWithOption:launchOptions appKey:JPushAppKey
-                          channel:@"Publish channel"
-                 apsForProduction:YES //配置环境的设置：是否生产环境
-            advertisingIdentifier:nil];
-    
-    if (launchOptions) {
-        NSDictionary * remoteJpushNotification = [launchOptions objectForKey:kJPFNetworkDidReceiveMessageNotification];
-        NSLog(@"remoteJpushNotification-> %@",remoteJpushNotification);
-        NSDictionary * remoteNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-        NSLog(@"remoteNotification-> %@",remoteNotification);
-        //这个判断是在程序没有运行的情况下收到通知，点击通知跳转页面
-        if (remoteNotification) {
-            NSLog(@"推送消息==== %@",remoteNotification);
-            handleNoteDict(remoteNotification);
-        }
-        
-    }
-}
 @end

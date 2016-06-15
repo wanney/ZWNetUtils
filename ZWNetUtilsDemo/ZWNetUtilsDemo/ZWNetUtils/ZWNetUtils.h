@@ -27,13 +27,12 @@
 #import "UIImageView+WebCache.h"
 #import "ZLPhotoActionSheet.h"                // 多功能的图片选择器
 #import "WYPopoverController.h"
-#import "JPUSHService.h"
 /**
  *  FrameWork from system
  */
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
+//#import <Foundation/Foundation.h>
+//#import <UIKit/UIKit.h>
+//#import <CoreLocation/CoreLocation.h>
 
 /**
  *  Custom views and tools from net by collect
@@ -51,10 +50,8 @@
 #import "Networking.h"                        // 基于AFNetworking的封装
 #import "UAProgressView.h"                    // 进度条
 #import "VPImageCropperViewController.h"      // 可裁剪图片的图片选择器，适用：需要正方形图片的头像选择
-#import "MultiChooseTvc.h"                    // 多层级选择器
 #import "XYYSegmentControl.h"                 // 类网易无限多tab可滑动分段控制器
 #import "PlaceholderTextView.h"               // 有placeholder的textview
-#import "Masonry.h"                           // 代码添加约束
 #import "MJExtension.h"                       // 用于自动生成模型
 #import "ZWTabBarItem.h"                      // 保持tabbar文字颜色和图片颜色保持一致
 #endif
