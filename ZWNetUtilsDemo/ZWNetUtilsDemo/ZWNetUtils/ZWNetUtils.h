@@ -30,9 +30,9 @@
 /**
  *  FrameWork from system
  */
-//#import <Foundation/Foundation.h>
-//#import <UIKit/UIKit.h>
-//#import <CoreLocation/CoreLocation.h>
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 /**
  *  Custom views and tools from net by collect
