@@ -237,6 +237,49 @@
  *  @return
  */
 + (NSString *) getStrFromHtmlContent:(NSString *)htmlStr;
+
++ (void) mallNaviBarStyle:(UIViewController *)vc;
+
++ (void) changeTheNaiBarAlpha:(CGFloat) alpha WithViewController:(UIViewController *) vc;
+
++ (void) setTextFontWithBarBtnItem:(UIBarButtonItem *)barBtnItem;
++ (void) setTextFontWithBarBtnItem:(UIBarButtonItem *)barBtnItem andSize:(CGFloat)size;
+
++ (void) addBarLine:(UIViewController *)vc;
+
++ (void) setButtonIcon:(UIButton *)button  withString:(NSString *)str andSize:(CGFloat)size andRange:(NSRange)range andColor:(UIColor *)color andTinColor:(UIColor *)tinColor;
++ (BOOL) isHaveLogin;   // 是否有账号登录?
+
+/**
+ *  获取用户id
+ */
++ (NSString *)getPetId;
+/**
+ *  保存用户id
+ */
++ (void)savePetId:(NSString *)userId;
+
+/*
+ *前往登陆
+ *vc : 当前视图的控制器对象
+ */
++ (void)gotoLoginVc:(UIViewController *)vc;
+
+
++ (NSURL *) getImgUrlAspectFill:(NSString *) baseUrl andWidth:(NSInteger)width andHeight:(NSInteger)height;
+
++ (NSURL *) getHeaderImgUrl:(NSString *) baseUrl;
+
++ (NSURL *) getRoundHeaderImageUrl:(NSString *) baseUrl;
+//字典数组反转化成json格式
++ (NSString *)toJSONData:(id)theData;
+
++ (CGSize)getAutoWidth:(NSString *)testStr andFontOfSize:(int)Size;
+//绘制直线或虚线
++(void)drawDashLine:(UIView *)lineView lineHeight:(float)lineHeight lineLength:(float)lineLength lineSpacing:(float)lineSpacing lineColor:(UIColor *)lineColor startX:(float)startX startY:(float)startY endX:(float)endX endY:(float)endY;
++ (NSString*)weekdayStringFromTimeStamp:(NSString *)timeStamp;
+
+
 #pragma mark - AppDelegate的设置
 /**
  *  初始化keyboard

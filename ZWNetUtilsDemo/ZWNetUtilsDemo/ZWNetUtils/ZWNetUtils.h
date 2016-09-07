@@ -25,7 +25,6 @@
 #import "MJRefresh.h"
 #import "SDWebImageManager.h"
 #import "UIImageView+WebCache.h"
-#import "ZLPhotoActionSheet.h"                // 多功能的图片选择器
 #import "WYPopoverController.h"
 /**
  *  FrameWork from system
@@ -54,4 +53,6 @@
 #import "PlaceholderTextView.h"               // 有placeholder的textview
 #import "MJExtension.h"                       // 用于自动生成模型
 #import "ZWTabBarItem.h"                      // 保持tabbar文字颜色和图片颜色保持一致
+#import "ZLPhotoActionSheet.h"                // 选择照片
 #endif
+

@@ -37,6 +37,9 @@
 
 #define DidChangeTheIndustrySuccessMessage @"didChangeTheIndustrySuccessMessage"
 
+// rgb颜色转换（16进制->10进制）
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 #define LightGreenColor [UIColor colorWithRed:161/255.0 green:202/255.0 blue:207/255.0    alpha:1]
 #define LightGrayColor  [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0    alpha:1]
 
@@ -50,6 +53,9 @@
 #define GrayLineColor [UIColor colorWithRed:237/255.0f green:237/255.0f blue:237/255.0f    alpha:1.0f]
 #define GraybgColor [UIColor colorWithRed:245/255.0f green:245/255.0f blue:245/255.0f    alpha:1.0f]
 
+//深黑色
+#define BlackDarkColor [UIColor colorWithRed:51/255.0f green:51/255.0f blue:51/255.0f  alpha:1.0f]
+
 #define ZWidth          [UIScreen mainScreen].bounds.size.width
 #define ZHeight         [UIScreen mainScreen].bounds.size.height
 
@@ -59,6 +65,7 @@
 #define DelayReloadTime 1.0
 
 #define OnePixelHeight   1.f/[UIScreen mainScreen].scale
+#define NavigationBarFontSize 20
 
 #define XCODE_COLORS_ESCAPE @"\033["
 

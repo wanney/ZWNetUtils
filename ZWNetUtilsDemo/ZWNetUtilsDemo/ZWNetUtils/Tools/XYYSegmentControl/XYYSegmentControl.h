@@ -112,6 +112,7 @@ typedef enum {
  */
 - (id)initWithFrame:(CGRect)frame channelName:(NSArray *)channel source:(UIViewController *)srcController;
 
+- (id)initWithFrame:(CGRect)frame andSegmentFrame:(CGRect)segframe channelName:(NSArray *)channel source:(UIViewController *)srcController;
 /**
  *  @author XuYong
  *

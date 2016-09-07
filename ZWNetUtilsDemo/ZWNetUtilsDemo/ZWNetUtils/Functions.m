@@ -473,6 +473,201 @@
     return myTextView.text;
 }
 
++ (void) mallNaviBarStyle:(UIViewController<UIGestureRecognizerDelegate> *)vc{
+    //修改背景色
+    vc.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    //修改标题色
+    [vc.navigationController.navigationBar setTitleTextAttributes:@{
+                                                                    NSForegroundColorAttributeName:BlackDarkColor,
+                                                                    NSFontAttributeName:[UIFont boldSystemFontOfSize:NavigationBarFontSize],  //粗体
+                                                                    }];
+    //修改按钮颜色
+    [vc.navigationController.navigationBar setTintColor:BlackDarkColor];
+    
+    [vc.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
+    vc.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
+    
+    //改变通知栏字体的颜色
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+    vc.navigationController.interactivePopGestureRecognizer.delegate = vc;
+}
+
++ (void) addBarLine:(UIViewController *)vc{
+    UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 64, ZWidth, OnePixelHeight)];
+    view.backgroundColor = Gray8DColor;
+    [vc.view addSubview:view];
+}
+
++ (void) changeTheNaiBarAlpha:(CGFloat)alpha WithViewController:(UIViewController<UIGestureRecognizerDelegate> *)vc{
+//    vc.navigationController.navigationBar.translucent = NO;
+//    vc.jz_wantsNavigationBarVisible = YES;
+//    vc.jz_navigationBarBackgroundAlpha = alpha;
+//    //修改背景色
+//    vc.navigationController.navigationBar.barTintColor = SystemThemeColor;
+//    //修改标题色
+//    //    [vc.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
+//    [vc.navigationController.navigationBar setTitleTextAttributes:@{
+//                                                                    NSForegroundColorAttributeName:[UIColor whiteColor],
+//                                                                    NSFontAttributeName:[UIFont boldSystemFontOfSize:NavigationBarFontSize],  //粗体
+//                                                                    }];
+//    //修改按钮颜色
+//    [vc.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+//    //    //去掉导航栏的边界黑线
+//    [vc.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:SystemThemeColor] forBarMetrics:UIBarMetricsDefault];
+//    vc.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
+//    //改变通知栏字体的颜色
+//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+//    vc.navigationController.interactivePopGestureRecognizer.delegate = vc;
+}
+
++ (void) setTextFontWithBarBtnItem:(UIBarButtonItem *)barBtnItem{
+    [Functions setTextFontWithBarBtnItem:barBtnItem andSize:19.0f];
+}
+
++ (void) setTextFontWithBarBtnItem:(UIBarButtonItem *)barBtnItem andSize:(CGFloat)size{
+    [Functions setTextFontWith:@"icomoon" andBarBtnItem:barBtnItem andSize:size];
+}
+
++ (void) setButtonIcon:(UIButton *)button  withString:(NSString *)str andSize:(CGFloat)size andRange:(NSRange)range andColor:(UIColor *)color andTinColor:(UIColor *)tinColor{
+    [Functions setButtonIcon:button withString:str andSize:size andRange:range andColor:color andTinColor:tinColor andFont:@"icomoon"];
+}
+
++ (BOOL) isHaveLogin{
+    return ![[Functions getUserId] isEqualToString:@""];
+}
+
++ (NSString *)getPetId{
+    return [Functions getString:[[NSUserDefaults standardUserDefaults] objectForKey:@"PetIdKey"] withDefault:@""];
+}
+
+
++ (void)savePetId:(NSString *)userId{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:userId forKey:@"PetIdKey"];
+    [defaults synchronize];
+}
+
++ (void)gotoLoginVc:(UIViewController *)vc{
+    UIStoryboard * storyBoard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+    UINavigationController * loginNavi = [storyBoard instantiateViewControllerWithIdentifier:@"loginNavi"];
+    [vc presentViewController:loginNavi animated:YES completion:nil];
+}
+
++ (NSURL *) getImgUrlAspectFill:(NSString *) baseUrl andWidth:(NSInteger)width andHeight:(NSInteger)height{
+    if (baseUrl) {
+        NSString * tempUrl = [NSString stringWithFormat:@"@%ldw_%ldh_1e_1c.src",(long)width,(long)height];
+        return [NSURL URLWithString:[baseUrl stringByAppendingString:tempUrl]];
+    }
+    return [NSURL URLWithString:@""];
+}
+
++ (NSURL *) getHeaderImgUrl:(NSString *) baseUrl{
+    if (baseUrl) {
+        return [NSURL URLWithString:[baseUrl stringByAppendingString:@"@120h_120w_1e_1c.src"]];
+    }
+    return [NSURL URLWithString:@""];
+}
+
++ (NSURL *) getRoundHeaderImageUrl:(NSString *) baseUrl{
+    if (baseUrl) {
+        return [NSURL URLWithString:[baseUrl stringByAppendingString:@"@200w_200h_1e_1c_100-2ci.png"]];
+    }
+    return [NSURL URLWithString:@""];
+}
+
+#pragma mark - 将字典或者数组转化为JSON串
++ (NSString *)toJSONData:(id)theData{
+    
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:theData
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    if ([jsonData length] > 0 && error == nil){
+        return [[NSString alloc] initWithData:jsonData
+                                     encoding:NSUTF8StringEncoding];
+    }else{
+        return @"";
+    }
+}
+
+/*
+ *lineView      需要绘制成虚线的view
+ *lineHeight    线的高度
+ *lineLength    线的宽度
+ *lineSpacing   线的间距
+ *lineColor     线的颜色
+ *startX        线的起点X轴
+ *startY        线的起点Y轴
+ *endX          线的终点X轴
+ *endY          线的终点Y轴
+ */
+
++(void)drawDashLine:(UIView *)lineView lineHeight:(float)lineHeight lineLength:(float)lineLength lineSpacing:(float)lineSpacing lineColor:(UIColor *)lineColor startX:(float)startX startY:(float)startY endX:(float)endX endY:(float)endY {
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    [shapeLayer setBounds:lineView.bounds];
+    [shapeLayer setPosition:lineView.center];
+    [shapeLayer setFillColor:[[UIColor clearColor] CGColor]];
+    
+    // 设置虚线颜色为
+    [shapeLayer setStrokeColor:lineColor.CGColor];
+    
+    // 3.0f设置虚线的高度
+    [shapeLayer setLineWidth:lineHeight];
+    [shapeLayer setLineJoin:kCALineJoinRound];
+    
+    // 3=线的宽度 1=每条线的间距
+    [shapeLayer setLineDashPattern:
+     [NSArray arrayWithObjects:[NSNumber numberWithInt:lineLength],
+      [NSNumber numberWithInt:lineSpacing],nil]];
+    
+    
+    //设置位置
+    CGMutablePathRef path = CGPathCreateMutable();
+    // 0,10代表初始坐标的x，y
+    // 320,10代表初始坐标的x，y
+    CGPathMoveToPoint(path, NULL, startX, startY);
+    CGPathAddLineToPoint(path, NULL, endX,endY);
+    
+    [shapeLayer setPath:path];
+    CGPathRelease(path);
+    
+    // 可以把self改成任何你想要的UIView, 下图演示就是放到UITableViewCell中的
+    [lineView.layer addSublayer:shapeLayer];
+}
+
++ (CGSize)getAutoWidth:(NSString *)testStr andFontOfSize:(int)Size{
+    UIFont * tfont = [UIFont systemFontOfSize:Size];
+    //高度估计文本大概要显示几行，宽度根据需求自己定义。 MAXFLOAT 可以算出具体要多高
+    CGSize size = CGSizeMake(MAXFLOAT, [testStr sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:Size]}].height);
+    //    获取当前文本的属性
+    NSDictionary * tdic = [NSDictionary dictionaryWithObjectsAndKeys:tfont,NSFontAttributeName,nil];
+    //ios7方法，获取文本需要的size，限制宽度
+    CGSize  actualsize = [testStr boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin  attributes:tdic context:nil].size;
+    //   更新UILabel的frame
+    return actualsize;
+}
+
+
++ (NSString*)weekdayStringFromTimeStamp:(NSString *)timeStamp {
+    NSDate *inputDate = [NSDate dateWithTimeIntervalSince1970:[timeStamp integerValue]];
+    
+    NSArray *weekdays = [NSArray arrayWithObjects: [NSNull null], @"星期日", @"星期一", @"星期二", @"星期三", @"星期四", @"星期五", @"星期六", nil];
+    
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    NSTimeZone *timeZone = [[NSTimeZone alloc] initWithName:@"Asia/Shanghai"];
+    
+    [calendar setTimeZone: timeZone];
+    
+    NSCalendarUnit calendarUnit = NSWeekdayCalendarUnit;
+    
+    NSDateComponents *theComponents = [calendar components:calendarUnit fromDate:inputDate];
+    
+    return [weekdays objectAtIndex:theComponents.weekday];
+    
+}
+
+
 + (void) initIQKeyBoard{
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
     manager.enable = YES; //控制整个功能是否启用。

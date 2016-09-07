@@ -54,6 +54,21 @@ static const CGFloat kImagesHeightOfTopScrollView = 54.0f;
     return self;
 }
 
+- (id)initWithFrame:(CGRect)frame andSegmentFrame:(CGRect)segframe channelName:(NSArray *)channel source:(UIViewController *)srcController
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.viewArray       = [[NSMutableArray alloc] init];
+        self.channelName     = [channel copy];
+        self.segmentController = srcController;
+        [self createTopViewWithFrame:segframe];//创建分布式
+        [self createRootView];
+        _isBuildUI = NO;
+    }
+    return self;
+}
+
+
 /**
  *  @author XuYong
  *
@@ -214,6 +229,28 @@ static const CGFloat kImagesHeightOfTopScrollView = 54.0f;
     CGFloat viewWidth = CGRectGetWidth(self.frame);
     self.ZWSegmentedControl = [[ZWSegmentedControl alloc] initWithFrame:CGRectMake(0, 0, viewWidth, kHeightOfTopScrollView)];
 //    self.ZWSegmentedControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
+    self.ZWSegmentedControl.sectionTitles = _channelName;
+    self.ZWSegmentedControl.selectedSegmentIndex = 0;
+    //默认colors
+    self.ZWSegmentedControl.selectedTitleTextAttributes = @{NSForegroundColorAttributeName : [UIColor redColor]};
+    self.ZWSegmentedControl.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor blackColor]};
+    self.ZWSegmentedControl.backgroundColor = [UIColor whiteColor];
+    self.ZWSegmentedControl.selectionIndicatorColor = [UIColor redColor];
+    //默认style
+    self.ZWSegmentedControl.selectionStyle = ZWSegmentedControlSelectionStyleTextWidthStripe;
+    self.ZWSegmentedControl.selectionIndicatorLocation = ZWSegmentedControlSelectionIndicatorLocationDown;
+    
+    [self addSubview:self.ZWSegmentedControl];
+    
+    __weak typeof(self) weakSelf = self;
+    [self.ZWSegmentedControl setIndexChangeBlock:^(NSInteger index) {
+        [weakSelf segmentClicked:index];
+    }];
+}
+
+- (void)createTopViewWithFrame:(CGRect)frame{
+    self.ZWSegmentedControl = [[ZWSegmentedControl alloc] initWithFrame:frame];
+    //    self.ZWSegmentedControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
     self.ZWSegmentedControl.sectionTitles = _channelName;
     self.ZWSegmentedControl.selectedSegmentIndex = 0;
     //默认colors

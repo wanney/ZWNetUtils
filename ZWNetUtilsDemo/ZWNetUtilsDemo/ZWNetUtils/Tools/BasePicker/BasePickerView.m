@@ -22,7 +22,7 @@
 - (id)initWithDelegate:(id<BasePickerDelegate>)delegate andArray:(NSArray *)array andTag:(NSInteger) tag
 {
     
-    self = [[[NSBundle mainBundle] loadNibNamed:@"BasePickerView" owner:self options:nil] objectAtIndex:0];
+    self = [[[NSBundle bundleForClass:[self class]] loadNibNamed:@"BasePickerView" owner:self options:nil] objectAtIndex:0];
     self.tag = tag;
     if (self) {
         self.delegate = delegate;
