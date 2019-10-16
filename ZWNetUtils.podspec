@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   s.dependency 'SDWebImage', '~> 3.7.5'
   s.dependency 'JZNavigationExtension', '~> 1.4.7'   
  
-  s.dependency 'ZLPhotoBrowser', '~> 1.0.5'
+  s.dependency 'ZLPhotoBrowser'
 #弹出视图
   s.dependency 'WYPopoverController', '~> 0.2.2'
 end
