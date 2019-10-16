@@ -18,14 +18,14 @@ Pod::Spec.new do |s|
 
   s.frameworks   = 'Foundation', 'CoreLocation', 'UIKit'
   
-  s.dependency 'IQKeyboardManager', '~> 4.0.0'
-  s.dependency 'AFNetworking', '~> 2.0'
-  s.dependency 'MBProgressHUD', '~> 0.9.2'
-  s.dependency 'MJRefresh', '~> 3.1.0'
-  s.dependency 'SDWebImage', '~> 3.7.5'
-  s.dependency 'JZNavigationExtension', '~> 1.4.7'   
+  s.dependency 'IQKeyboardManager'#, '~> 4.0.0'
+  s.dependency 'AFNetworking'#, '~> 2.0'
+  s.dependency 'MBProgressHUD'#, '~> 0.9.2'
+  s.dependency 'MJRefresh'#, '~> 3.1.0'
+  s.dependency 'SDWebImage'#, '~> 3.7.5'
+  s.dependency 'JZNavigationExtension'#, '~> 1.4.7'   
  
-  s.dependency 'ZLPhotoBrowser', '~> 1.0.5'
+  s.dependency 'ZLPhotoBrowser'#, '~> 1.0.5'
 #弹出视图
-  s.dependency 'WYPopoverController', '~> 0.2.2'
+  s.dependency 'WYPopoverController'#, '~> 0.2.2'
 end
